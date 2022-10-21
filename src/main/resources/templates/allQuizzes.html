@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Quiz page</title>
+</head>
+<body>
+    <div class="quizContainer">
+        <h1 class="quizCardTitle">Quizzes</h1>
+        <div class="row">
+            <div class="col-xl-3" th:each="que, i : ${session.qts}">
+                <div class="card quizCard" >
+                    <div class="card-body quizCardBody">
+                        <p class="card-title" th:text="${que.question}"></p>
+                        <hr>
+                        <div class="quizCardBtnContainer">
+                            <a th:if = "${session.userperm != 'RESTRICTED'}" th:href="@{|/quizzes/${que.id}|}">View Quiz</a>
+
+                            <a th:if = "${session.userperm == 'EDIT'}" th:href="@{|/quizzes/update/${que.id}|}">Update Quiz</a>
+
+                            <form th:if = "${session.userperm == 'EDIT'}"  th:action="@{/quizzes/delete}" th:method="delete">
+                                <input type="hidden" id="quizid" name="quizid" th:value="${que.id}">
+                                <button class="deleteBtn" type="submit">Delete Quiz</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quizCardBtnContainer allAccessBtns">
+        <a class="btn btn-primary" th:href="@{/quizzes/create}">Create a Quiz</a>
+        <br><br><br>
+        <a class="btn btn-primary logOutBtn"th:href="@{/logout}">Logout</a>
+    </div>
+</body>
+</html>

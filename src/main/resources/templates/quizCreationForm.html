@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Quiz page</title>
+</head>
+<body>
+    <h1 class="createTitle">Create a Quiz</h1>
+    <form class="updateFormContainer" th:action="@{/quizzes/create}" method="post">
+        <div class="form-group">
+            <label>Quiz question:</label>
+            <input type="text" name="question" /><br/>
+        </div>
+        <br>
+        <p><u>List of answers:</u></p>
+        <br>
+        <div class="form-group">
+            <label>Option 1:</label>
+            <input type="text" name="option1" /><br/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Option 2:</label>
+            <input type="text" name="option2" /><br/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Option 3:</label>
+            <input type="text" name="option3" /><br/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Option 4:</label>
+            <input type="text" name="option4" /><br/>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Correct Answer</label>
+            <input type="text" name="answer" /><br/>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-primary" type="submit">Create</button>
+        <br>
+        <a th:href="@{/quizzes}">Back to quizzes</a>
+    </form>
+</body>
+</html>

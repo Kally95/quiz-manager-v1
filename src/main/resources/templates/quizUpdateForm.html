@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Quiz page</title>
+</head>
+<body>
+    <h1 class="updateTitle">Update a Quiz</h1>
+        <form class="updateFormContainer" th:action="@{/quizzes/update}" th:method="put">
+            <input type="hidden" id="quizid" name="quizid" th:value="${session.quiz.id}">
+            <div class="form-group">
+                <label for="question">Quiz question:</label>
+                <br><br>
+                <input type="text" class="form-control" id="question" name="question" rows="3" th:value="${session.quiz.question}"/>
+            </div>
+            <br>
+            <p><u>List of answers:</u></p>
+            <div class="form-group">
+                <label>Option 1:</label>
+                <input type="text" name="option1" th:value="${session.quiz.answers[0].option1}" /><br/>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Option 2:</label>
+                <input type="text" name="option2" th:value="${session.quiz.answers[0].option2}"/><br/>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Option 3:</label>
+                <input type="text" name="option3" th:value="${session.quiz.answers[0].option3}"/><br/>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Option 4:</label>
+                <input type="text" name="option4" th:value="${session.quiz.answers[0].option4}"/><br/>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Correct Answer:</label>
+                <input type="text" name="answer" th:value="${session.quiz.answers[0].answer}"/><br/>
+            </div>
+            <br>
+            <button class="btn btn-primary" type="submit">Update</button>
+            <br>
+            <a th:href="@{/quizzes}">Back to quizzes</a>
+            <a class="btn btn-primary logOutBtn"th:href="@{/logout}">Logout</a>
+        </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+</head>
+<body>
+
+<div class="card selectedQuizCard" style="width: 35rem;">
+    <b><p th:text="${session.quiz.question}"></p></b>
+    <div class="card-body">
+        <form method="POST" action="/validatequiz">
+            <input type="hidden" id="quizid" name="quizid" th:value="${session.quiz.id}">
+            <input type="radio" id="option1" name="ans" th:value="${session.quiz.answers[0].option1}" required>
+            <label for="option1" th:text="${session.quiz.answers[0].option1}" ></label><br>
+
+            <input type="radio" id="option2" name="ans" th:value="${session.quiz.answers[0].option2}">
+            <label for="option2" th:text="${session.quiz.answers[0].option2}" ></label><br>
+
+            <input type="radio" id="option3" name="ans" th:value="${session.quiz.answers[0].option3}">
+            <label for="option3" th:text="${session.quiz.answers[0].option3}" ></label><br>
+
+            <input type="radio" id="option4" name="ans" th:value="${session.quiz.answers[0].option4}">
+            <label for="option4" th:text="${session.quiz.answers[0].option4}" ></label><br>
+            <br>
+            <br>
+            <p><span th:if="${param.success != null}" style="color:green">Correct Answer!</span></p>
+            <p><span th:if="${param.fail != null}" style="color:red">Wrong Answer!</span></p>
+            <br>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <input style="margin-right: 5px; " class="btn btn-primary" type="submit"/>
+                <a class="btn btn-primary" th:href="@{/quizzes}">Back to quizzes</a>
+            </div>
+            <a class="btn btn-primary logOutBtn"th:href="@{/logout}">Logout</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

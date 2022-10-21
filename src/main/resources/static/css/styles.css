@@ -1,0 +1,125 @@
+.error {
+    color: red;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+}
+
+.formContainer {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+.cardWrapper {
+    display: flex;
+    flex-direction: inherit;
+    justify-content: space-around;
+}
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 85%;
+    left: 40%;
+    margin-top: -50px;
+    width: 500px;
+    margin-left: -100px;
+}
+
+.indexContainer {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    left: 50%;
+    margin: 150px auto auto;
+}
+
+.quizContainer {
+    justify-content: center;
+    width: 1000px;
+    flex-flow: column wrap;
+    display: flex;
+    margin: auto;
+}
+
+.quizCard {
+    width: 15rem;
+    margin-top: 10px;
+}
+
+.logOutBtn {
+    position: fixed;
+    right: 0;
+    top: 0;
+    right: 15px;
+    top: 15px;
+}
+
+.del-btn {
+    pointer-events: none;
+    text-decoration: none;
+    border: none;
+    text-decoration: none;
+    background-color: rgb(220,53,69);
+}
+
+a {
+    text-decoration: none !important;
+    margin-left: 1rem;
+}
+
+.deleteBtn {
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+.del-form{
+    pointer-events: none;
+ }
+
+.formTitle, .indexTitle, .updateTitle, .createTitle {
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.selectedQuizCard {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    top: 120px;
+    padding: 15px;
+}
+
+.quizCardTitle {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.allAccessBtns {
+    height: 58px;
+    padding-top: 20px;
+    justify-content: center;
+    width: 1000px;
+    display: flex;
+    margin: auto;
+}
+
+.updateFormContainer {
+    width: 395px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 5px solid #007BFF;
+    padding: 20px;
+    border-radius: 3%;
+}
