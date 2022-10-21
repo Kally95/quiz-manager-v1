@@ -40,6 +40,4 @@ public class UserService {
         userRepository.delete(user);
     }
 
-    // Create method to be called by login controller method to validate user login
-
 }
