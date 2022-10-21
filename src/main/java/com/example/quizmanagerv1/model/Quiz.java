@@ -20,7 +20,4 @@ public class Quiz {
 
     @OneToMany
     private List<Answers> answers;
-
-    private String created_by;
-
 }
